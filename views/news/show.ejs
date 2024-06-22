@@ -1,0 +1,24 @@
+<%layout("/layouts/boilerplate")%>
+<body>
+<div class="row">
+    <div class="col-8 offset-3 mt-3">
+        <h3>News In Detail</h3>
+  </div>
+  <div class="col-6 offset-3">
+    <div class="card">
+        <img src="<%=nws.urlToImage%>" class="card-img-top show-img" alt="...">
+        <div class="card-body">
+          <p class="card-text"> <b><%=nws.title %></b></p>
+            <p>Author :<%=nws.author %></p>
+            <p><%=nws.description %></p>
+            <p><%=nws.content %></p>
+        </div>
+    </div>
+        <a href="/news/<%=nws._id%>/edit">Edit this News</a><br><br>
+        <form action="/news/<%=nws._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-dark mb-3">Delete this news</button>
+        </form>
+
+    </div>
+</div>
+</body>

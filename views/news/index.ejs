@@ -1,0 +1,99 @@
+<%layout("/layouts/boilerplate")%>
+<nav class="navbar navbar-expand-lg bg-body-tertiary mt-3">
+  <div class="container-fluid">
+ 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/news/quick/general"> 
+            <div class="filter ">
+              <div> <i class="fa-solid fa-fire"></i></div>
+             <p> General </p> 
+           </div>
+          </a>
+        </li>
+        <li class="nav-item mr-1">
+          <a class="nav-link" href="/news/quick/business">
+            <div class="filter ">
+              <div> <i class="fa-regular fa-building"></i></div>
+             <p> Business </p> 
+           </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/news/quick/entertainment">
+            <div class="filter ">
+              <div><i class="fa-solid fa-tv"></i></div>
+             <p> Entertainment </p> 
+           </div>
+           
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/news/quick/health">
+            <div class="filter  ">
+              <div><i class="fa-solid fa-user-doctor"></i></div>
+             <p> Health </p> 
+           </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/news/quick/science">
+            <div class="filter ">
+              <div><i class="fa-solid fa-flask"></i></div>
+             <p> Science</p> 
+           </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/news/quick/sports">
+            <div class="filter ">
+              <div> <i class="fa-solid fa-volleyball"></i></div>
+             <p> Sports</p> 
+           </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/news/quick/technology">
+            <div class="filter ">
+              <div><i class="fa-solid fa-microchip"></i></div>
+             <p> Technology</p> 
+           </div>
+          </a>
+        </li>
+       </ul>
+
+    </div>
+  </div>
+</nav>
+  
+<body>
+    <h3>All news</h3>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <%  for(let nws of allNews) { %>
+            <a href="/news/<%=nws._id%>" class="card-link">
+            <div class="card col">
+                <img src="<%=nws.urlToImage%>" class="card-img-top" alt="..." style="height: 15rem;">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                  <p class="card-text">
+                    <b> <%=nws.title%> </b>
+                  </p>
+                </div>
+              </div>
+            </a>
+              <% }%>
+    </div>
+   
+    
+
+    
+   
+        
+     
+
+</body>
+

@@ -1,0 +1,53 @@
+<%layout("/layouts/boilerplate")%>
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+    <h3>Edit News</h3>
+    <form action="/news/<%=nws._id%>?_method=PUT" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input required class="form-control" type="text" value="<%=nws.title%>" id="title" name="news[title]">
+           </div>
+           <div class="row">
+            <div class="mb-3 col-md-6">
+                <label for="category" class="form-label">Category</label>
+                <select  required   id="category" class="form-control"  name="news[category]">
+                    <option value="<%=nws.category%>" selected><%=nws.category%></option>
+                    <option value="business">Business</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="general" >General</option>
+                    <option value="health">Health</option>
+                    <option value="science">Science</option>
+                    <option value="sports">Sports</option>
+                    <option value="technology">Technology</option>
+                </select>
+           
+            </div>
+          
+           <div class="mb-3 col-md-6">
+            <label for="author" class="form-label">Author</label>
+            <input  required id="author"  class="form-control" type="text"  value="<%=nws.author%>" name="news[author]">
+           </div>
+           </div>
+       
+        
+       <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea id="description" required class="form-control" type="text"  name="news[description]" row="5" column="15"><%=nws.description%></textarea>
+       </div>
+       <div class="mb-3">
+        <label for="url" class="form-label">Image link</label>
+        <input id="url" class="form-control" type="text" value="<%=nws.urlToImage%>"  name="news[urlToImage]">
+       </div>
+       <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <textarea itemid="content" class="form-control"  required name="news[content]"   id="" row="8" column="15"><%=nws.content%></textarea>
+       </div>
+      
+        <button class="btn btn-dark add-btn mb-3">Edit News</button><br>
+
+
+    </form>
+    </div>
+    </div>
+</body>

@@ -1,0 +1,51 @@
+<%layout("/layouts/boilerplate")%>
+<body>
+    
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <h3>Create News</h3>
+    <form action="/news" method="POST">       
+         <div class="mb-3">
+            <label for="title" class="form-label">Enter Title</label>
+        <input required type="text" placeholder="Title" name="news[title]" class="form-control" id="title" >
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label for="author" class="form-label">Author</label>
+                <input  required type="text" placeholder="Author" name="news[author]" id="author" class="form-control">
+            </div>
+           <div class="mb-3 col-md-6">
+      
+            <label for="category" class="form-label">Category</label>
+            <select name="news[category]"  id="" class="form-control">
+                <option value="business">Business</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="general" selected>General</option>
+                <option value="health">Health</option>
+                <option value="science">Science</option>
+                <option value="sports">Sports</option>
+                <option value="technology">Technology</option>
+            </select>
+           </div>
+        </div>
+       
+       <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea required type="text" placeholder="description" name="news[description]" id="description"  class="form-control"></textarea>
+       </div>
+       <div class="mb-3">
+        <label for="url" class="form-label">Enter Image Url :</label>
+        <input type="text" id="url" placeholder="image url" name="news[urlToImage]"  class="form-control">
+       </div>
+       <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <textarea required name="news[content]" id="content"  class="form-control"></textarea>
+       </div>
+       
+        <button class="btn btn-dark add-btn mb-3">Add News</button><br>
+       
+
+    </form>
+</div>
+</div>
+</body>
